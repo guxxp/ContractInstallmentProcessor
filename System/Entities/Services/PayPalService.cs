@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace System.Entities.Services
 {
-    internal class PayPaalService
+    internal class PayPaalService : IServicePagmentOnline
     {
         public double paymentFee(double amount)
         {
