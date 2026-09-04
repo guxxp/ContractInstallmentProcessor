@@ -12,7 +12,7 @@ namespace System.Entities
         private DateTime Date;
         private double Value;
 
-        
+        List<Installment> Installment = new List<Installment>();
 
         public Contract(int number, DateTime date, double value)
         {
