@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,9 @@ namespace System.Entities
 
         public override string ToString()
         {
-            return $"{DueDate.ToString("dd-MM-yyyy")} - {Value.ToString("F2")}";
+            return DueDate.ToString("dd/MM/yyyy")
+                + " - "
+                + Value.ToString("F2", CultureInfo.InvariantCulture);
         }
 
     }
