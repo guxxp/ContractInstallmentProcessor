@@ -10,7 +10,7 @@ namespace System.Entities
     {
         private int Number;
         private DateTime Date;
-        private double Value;
+        private double TotalValue;
 
         public List<Installment> Installment = new List<Installment>();
 
@@ -19,7 +19,7 @@ namespace System.Entities
         {
             Number = number;
             Date = date;
-            Value = value;
+            TotalValue = value;
         }
         public int number
         {
@@ -33,10 +33,10 @@ namespace System.Entities
             set { value = date; }
 
         }
-        public double valuer
+        public double totalvalue
         {
-            get { return Value; }
-            set {  value = valuer; }
+            get { return TotalValue; }
+            set {  value = totalvalue; }
 
         }
 
