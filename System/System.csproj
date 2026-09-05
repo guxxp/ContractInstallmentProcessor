@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F45EA8E7-310E-4372-AA3A-61D46A905C98}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>System</RootNamespace>
-    <AssemblyName>System</AssemblyName>
+    <RootNamespace>ContractInstallmentProcessor</RootNamespace>
+    <AssemblyName>ContractInstallmentProcessor.exe</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Entities\Installment.cs" />
     <Compile Include="Entities\Contract.cs" />
-    <Compile Include="Entities\Services\Entities\ServicePagmentOnline.cs" />
+    <Compile Include="Entities\Services\Entities\IServicePagmentOnline.cs" />
     <Compile Include="Entities\Services\PayPalService.cs" />
     <Compile Include="Entities\Services\ServiceContract.cs" />
     <Compile Include="Program.cs" />
