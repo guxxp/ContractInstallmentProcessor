@@ -31,7 +31,10 @@ namespace System.Entities
             set { valuer = value; }
         }
 
-
+        public override string ToString()
+        {
+            return $"{DueDate.ToString("dd-MM-yyyy")} - {Value.ToString("F2")}";
+        }
 
     }
 }

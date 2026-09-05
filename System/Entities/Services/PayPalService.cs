@@ -8,14 +8,14 @@ namespace System.Entities.Services
 {
     internal class PayPaalService : IServicePagmentOnline
     {
-        public double paymentFee(double amount)
+        public double paymentFee(double amount) // taxa 
         {
-            return amount * 0.02;
+            return (amount * 0.01) + 1;
 
         }
-        public double interest (double amount, int month)
+        public double interest (double amount, int month) // juros
         {
-            return (amount * 0.01) * month;
+            return (amount + 1) * month;
 
         }
 

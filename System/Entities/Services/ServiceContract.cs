@@ -13,15 +13,19 @@ namespace System.Entities.Services
         {
             
            
-            for(int i = 1; i <= Month; i++)
+            for(int i = 1; i <= Month; i++) /// Mes 1 
             {
+                double amount = contract.valuer / Month;
 
-                
+
                 PayPaalService payPaalService = new PayPaalService();
+
                 double valuetax = payPaalService.paymentFee(contract.valuer);
+
                 double valueinterest = payPaalService.interest(contract.valuer, i);
 
-                double amount = (valuetax + valueinterest) + contract.valuer;
+
+                amount += valueinterest;
 
 
 

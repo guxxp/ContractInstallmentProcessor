@@ -14,6 +14,7 @@ namespace System.Entities
 
         public List<Installment> Installment = new List<Installment>();
 
+
         public Contract(int number, DateTime date, double value)
         {
             Number = number;
@@ -37,6 +38,19 @@ namespace System.Entities
             get { return Value; }
             set {  value = valuer; }
 
+        }
+
+        public override string ToString()
+        {
+            string resultado = "";
+
+            foreach (Installment installments in Installment)
+            {
+                resultado += installments.ToString() + "\n";
+                
+            }
+
+            return resultado;
         }
     }
 }
