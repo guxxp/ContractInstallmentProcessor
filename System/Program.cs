@@ -34,12 +34,14 @@ namespace System
             int Month = int.Parse(Console.ReadLine());
 
 
-            Contract contract = new Contract(number, date, value);
-            ServiceContract serviceContract = new ServiceContract();
-            serviceContract.processContract(contract, Month);
+            Contract mycontract = new Contract(number, date, value);
+
+            ServiceContract serviceContract = new ServiceContract(new PayPaalService());
+
+            serviceContract.processContract(mycontract, Month);
 
             Console.WriteLine("Installments:");
-            Console.WriteLine(contract);
+            Console.WriteLine(mycontract);
 
 
             Console.ReadLine();
