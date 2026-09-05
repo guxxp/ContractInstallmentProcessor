@@ -8,36 +8,31 @@ namespace System.Entities.Services
 {
     internal class ServiceContract
     {
+        private IServicePagmentOnline _onlinePaymentService;
+
+        public ServiceContract(IServicePagmentOnline onlinePaymentService)
+        {
+            _onlinePaymentService = onlinePaymentService;
+        }
+
 
         public void processContract(Contract contract, int Month)
         {
-            
-           
-            for(int i = 1; i <= Month; i++) /// Mes 1 
+            double installment_value = contract.totalvalue / Month; /// valor das parcelas 
+
+            for (int i = 1; i <= Month; i++) 
             {
-                double amount = contract.valuer / Month;
-
-
-                PayPaalService payPaalService = new PayPaalService();
-
-                double valuetax = payPaalService.paymentFee(contract.valuer);
-
-                double valueinterest = payPaalService.interest(contract.valuer, i);
-
-
-                amount += valueinterest;
-
-
-
                 DateTime duedate = contract.date.AddMonths(i);
 
-                Installment installment = new Installment(duedate, amount);
+                double valueinterest = installment_value +  _onlinePaymentService.interest(installment_value, i);
+                double valuetax = valueinterest + _onlinePaymentService.paymentFee(valueinterest);
+               
+                
+
+                Installment installment = new Installment(duedate, valuetax);
 
                 contract.Installment.Add(installment);
-                
             }
-
-
 
         }
     }
