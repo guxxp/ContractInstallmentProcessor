@@ -18,7 +18,7 @@ namespace System.Entities.Services
 
         public void processContract(Contract contract, int Month)
         {
-            double installment_value = contract.totalvalue / Month; /// valor das parcelas 
+            double installment_value = contract.totalvalue / Month; /// valor das parcelass
 
             for (int i = 1; i <= Month; i++) 
             {
